@@ -27,24 +27,34 @@ isHard=false
     this.hard()
   }
   empty(){
-    this.pass.nativeElement.value?this.isEmpty=false:this.isEmpty=true
+    this.pass.nativeElement.value
+      ?this.isEmpty=false
+      :this.isEmpty=true
   }
   short(){
-    this.pass.nativeElement.value.length>0&&this.pass.nativeElement.value.length<8?this.isShort=true:this.isShort=false
+    this.pass.nativeElement.value.length>0&&this.pass.nativeElement.value.length<8
+      ?this.isShort=true
+      :this.isShort=false
   }
   easy() {
     const pattern = /^(?:[a-zA-Z]+|\d+|[^a-zA-Z\d\s]+)$/;
-    pattern.test(this.pass.nativeElement.value) ? this.isEasy=true :this.isEasy=false
+    pattern.test(this.pass.nativeElement.value) 
+      ? this.isEasy=true 
+      :this.isEasy=false
   }
   medium() {
     const pattern = /(?:[a-zA-Z]+\d+|[a-zA-Z]+[^a-zA-Z\d\s]+|\d+[^a-zA-Z\d\s]+)/
-    pattern.test(this.pass.nativeElement.value) ? this.isMedium=true :this.isMedium=false
+    pattern.test(this.pass.nativeElement.value)
+      ?this.isMedium=true
+      :this.isMedium=false
   }
 
 
   hard()  {
     const pattern = /(?=.*[a-zA-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s])[a-zA-Z\d\s]*/
-    pattern.test(this.pass.nativeElement.value) ? this.isHard=true :this.isHard=false
+    pattern.test(this.pass.nativeElement.value)
+      ? this.isHard=true
+      :this.isHard=false
   }
 
 }
